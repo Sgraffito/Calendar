@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang = "en">
+
+<head>
+	<title> Monthly Calendar </title>
+	<meta charset="utf-8">
+    <script src="jquery-2.1.1.min.js"></script>
+	<link rel="stylesheet" href="calendar.css">
+    <script src="calendar.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<!-- Popover that appears when user clicks on add event -->
+<div id="pop1" class="popover" align="center">
+    <form class="addEvent">
+    <div>
+        <h5>Event Name</h5>
+        <label>
+        <input type="text" id="eventNameInput" name="firstname">
+        </label>
+        <h5>Date</h5>
+        <select id="dateMonth" name="nameOfMonthSelect">
+                <option value="september">September</option>
+                <option value="october">October</option>
+                <option value="november">November</option>
+        </select>
+        <select id="dateDay" name="dayNumberSelect">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">12</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+        </select>
+        
+        <select id="dateYear" name="yearSelect">
+                <option value="2014">2014</option>
+        </select>
+        
+        <h5>Start Time</h5>
+        <input type="time" id="startTimeInput" name="usr_time">
+        <h5>End Time</h5>
+        <input type="time" id="endTimeInput" name="usr_time">
+        <h5>Location</h5>
+        <input type="text" id="locationInput" name="firstname">
+    </div>
+    
+    
+    <div id = "popbuttons">
+        <a href="javascript:saveAndClosePopOver('pop1');">SAVE</a>
+        <a href="javascript:cancelPopOver('pop1');">CANCEL</a>
+    </div>
+    </form>
+</div>
+    
+<!-- Popover that appears when user clicks on an event list item -->
+<div id="pop2" class="popover" align="center">
+    <div id = "popbuttons">
+        <form class="addEvent">
+        <a href="javascript:editEventAndClosePopOver('pop2')">EDIT EVENT</a> <br>
+        <a href="javascript:deleteEventAndClosePopOver('pop2')">DELETE EVENT</a> <br>
+        <a href="javascript:cancelPopOver('pop2')">CANCEL</a>
+        </form>
+    </div>
+    </form>
+</div>
+    
+<div class="wrapper">
+<div class="header">
+</div> 
+
+<div class="content">
+
+<div class="primary">
+    
+    <div class="yearDate">
+        <h3>2014</h3>
+    </div>
+    
+    <div class = "monthButtons">
+        <button type="button" onclick="monthOfSeptember()", id="monthOfSeptember" class="monthButton" name="monthButton"> September </button>
+        <button type="button" onclick="monthOfOctober()", id="monthOfOctober" class="monthButton" name="monthButton"> October </button>
+        <button type="button" onclick="monthOfNovember()", id="monthOfNovember" class="monthButton" name="monthButton"> November </button>
+    </div>
+    
+    <div class = "daysOfWeek">
+        <div class = "dayOfWeek"> Sun </div>
+        <div class = "dayOfWeek"> Mon </div>
+        <div class = "dayOfWeek"> Tues </div>
+        <div class = "dayOfWeek"> Wed </div>
+        <div class = "dayOfWeek"> Thurs </div>
+        <div class = "dayOfWeek"> Fri </div>
+        <div class = "dayOfWeek"> Sat </div>
+    </div>
+    
+    <div class="buttons">
+        <!-- 6 rows by 7 columns = 42 buttons -->
+        <button type="button" onclick="buttonClicked(0)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(1)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(2)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(3)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(4)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(5)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(6)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(7)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(8)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(9)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(10)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(11)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(12)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(13)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(14)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(15)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(16)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(17)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(18)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(19)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(20)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(21)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(22)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(23)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(24)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(25)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(26)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(27)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(28)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(29)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(30)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(31)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(32)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(33)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(34)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(35)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(36)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(37)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(38)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(39)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(40)" class="button" name="addButton">Click Me!</button>
+        <button type="button" onclick="buttonClicked(41)" class="button" name="addButton">Click Me!</button>
+    </div>
+</div> 
+
+<div class="secondary">
+    
+    <!-- Upper-left image -->
+    <div>
+        <img id="secondaryImage" src="images/dogWithGlasses.jpeg" alt="Dog with Glasses" style="width:280px;height:280px">
+    </div>  
+    
+    <div class="selectedDate">
+        <h3 id="dayOfWeek"> Friday </h3>
+        <h3 id="monthAndDay"> October 10th </h3>
+        <div class="block_1"> </div> <hr /> 
+    </div>
+    
+    <div class="events">
+        <h3> Events </h3>
+        <a href="javascript:showPopOver('pop1');" class="addEvent"><b>Add Event</b></a>
+        <ul id="eventList">
+        </ul>
+    </div>
+    
+</div>
+
+</div>
+
+<div class="footer">
+    <h4> ©2014 Nicole Yarroch & J.T. Davies </h4>
+</div>
+
+</div>
+
+</body>
+</html>

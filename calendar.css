@@ -1,0 +1,317 @@
+/* 	The Core Technique
+	Two Column Fixed-Width
+	Centered on Page
+    secondary content: 280px
+    primary content: 600px
+================================= */
+body {
+  	text-align: center; 
+  	min-width: 960px;
+}
+
+.wrapper {
+  	width: 920px; 
+  	margin: 0 auto; 
+  	text-align: left;
+}
+
+.content {
+	overflow: hidden;
+}
+
+.content .primary { 
+ 	width: 600px;
+	padding-right: 20px;
+    padding-bottom: 30px;
+ 	float: right;
+}
+
+.content .secondary { 
+  	width: 280px;
+    /* setting min-height lets color fill whole div 
+       and also allows div to grow as more events
+       are added*/
+    min-height: 680px;
+  	float: left; 
+} 
+
+/* Make Things Look Pretty
+================================= */
+
+/* Zero all margins and padding for all elements */
+* {
+  	margin: 0;
+  	padding: 0;
+}
+
+.header {
+	height: 20px;
+  	background-color:#C9D3BF;
+}
+
+body {
+  	font: 62.5%/1.6 "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", Verdana, sans-serif;
+	/* Background color of the page */
+  	background-color: #C9D3BF;
+}
+
+<!-- Year text -->
+h1 {
+  	font-size: 2.4em;
+  	font-weight: normal;
+    text-align: right;
+    color: #adadad;
+}
+
+h2 {
+  	font-size: 2.0em;
+  	font-weight: normal;
+}
+
+/* Year date text */
+h3 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 3.0em;
+	color: #C9D3BF;
+}
+
+/* Copywrite text */
+h4 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 1.0em;
+    text-align: right;
+    color:#FFF;
+}
+
+/* Pop-over labels */
+h5 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 1.75em;
+    text-align: left;
+    color:#000;
+}
+
+.yearDate {
+    text-align: right;
+    margin: 10px 20px 0px 10px;
+}
+
+p, li {
+  	font-size: 1.4em;
+}
+
+h1, h2, p {
+  	margin: 1em 0;
+}
+
+
+.branding h1 {
+  	margin: 0;
+}
+
+.wrapper {
+    /* Primary content color */
+  	background-color: #FFF;
+}
+
+.secondary {
+	background-color: #595951;
+}
+
+.content .secondary .promo {
+	padding-left: 20px;
+}
+
+.content .selectedDate {
+    padding-top: 10px;
+	padding-left: 20px;
+}
+
+/* Add wrapping to list elements */
+.content .events {
+    margin: 1em 2em 2em 2em;
+    width: 230px;
+    padding: 5px;
+}
+
+.footer {
+  	background-color: #798E8F;
+  	padding: 5px 20px;
+}
+
+/* Buttons */
+.buttons {
+    margin:10px;
+}
+
+/* Calendar Buttons */
+.button {
+    float: left;
+    margin: 4px;
+    width: 74px;
+    height: 74px;
+    border: 0;
+    text-decoration:none;
+    font-size: 2.0em;
+}
+
+/* Removes blue outline around button when button is clicked */
+button:focus {outline:0;}
+
+.monthButtons {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Name of Month Buttons (e.g. Sept, Oct, Nov) */
+.monthButton {
+    width: 120px;
+    height: 40px;
+    padding: 5px;
+    background: none;
+    border: 0;
+    color:#000;
+    text-decoration:none;
+    font-size: 2.0em;
+}
+
+.daysOfWeek {
+    margin: 10px;
+}
+
+.dayOfWeek {
+    float: left;
+    width: 77px;
+    height: 30px;
+    padding-left: 5px;
+    margin:0px 0px 0px 0px;
+    background-color: #FFF;
+    color:#C9D3BF;
+    text-decoration:none;
+    font-size: 1.75em;
+    text-align: center
+}
+
+/* Line between event name and event */
+hr { 
+    width:90%; 
+    height:3px; 
+    border: 0;
+    background: #ABA898;
+    margin-top: 10px;
+}
+
+/* Pop - Over
+================================= */
+
+.popover {
+    position: absolute;
+	display: none;
+	z-index: 2;
+	/*background-color: #eaeaea;*/
+}
+
+#pop1 {
+     width: 360px; 
+     height: 390px; 
+}
+
+#pop2 {
+    position: absolute;
+	display: none;
+	z-index: 2;
+    width: 360px;    
+    height: 200px; 
+}
+
+/*  Style add event form */
+form {
+    background: -webkit-gradient(linear, bottom, left 175px, from(#CCCCCC), to(#EEEEEE));
+    background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+    background-color: #ed5a92;
+    margin:auto;
+    position:relative;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding:30px;
+    border: inset 1px solid #333;
+    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+/*  Style input field of add event form */
+input {
+    width:280px;
+    display:block;
+    border: 1px solid #999;
+    height: 25px;
+    margin: 5px 0px 20px 0px;
+}
+
+/* Add a highlight to the text box the user is using */
+textarea:focus, input:focus {
+    border: 1px solid #09C;
+}
+
+/* Links
+================================= */
+
+/* Add event link */
+a.addEvent {
+    color:#FFF;
+    font-size: 2.0em;
+    font-family: serif;
+}
+a.addEvent:link  {
+    text-decoration: none; 
+    color:#FFF;
+}
+a.addEvent:visited {
+    text-decoration: none; 
+    color:#FFF;
+}
+a.addEvent:hover {
+    text-decoration: none; 
+    color:#FF00FF;
+}
+a.addEvent:active {
+    text-decoration: none; 
+    color:#FFF;
+}
+
+/* unvisited link */
+a:link {
+    color: #FFF;
+    text-decoration: none;
+}
+
+a {
+    font-size: 2.0em;
+    font-family: monospace;
+}
+
+/* visited link */
+a:visited {
+    color: #FFF;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00FF;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: #FFF;
+    text-decoration: none;
+}
